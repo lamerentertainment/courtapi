@@ -2,7 +2,15 @@ import requests
 import json
 
 url = 'http://localhost:8000/api/v1/transform_text'
-payload = {'text': 'dies ist ein text'}
+payload = {
+    'text': """Ich bin unschuldig. Nie habe ich 
+    dieser Person je ein Haar gek- 
+    rümmt. Dies ist eine ziemlich un- 
+    rühmliche Behauptung. Viel- 
+    mehr ist Laure die schuld- 
+    ige Person  """,
+    'geschlecht': "w"
+}
 
 # Convert payload to JSON
 json_payload = json.dumps(payload)
