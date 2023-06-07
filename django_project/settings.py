@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Local
     "accounts.apps.AccountsConfig",
+    "courtapi.apps.CourtapiConfig"
 ]
 
 MIDDLEWARE = [
