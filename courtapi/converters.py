@@ -1,4 +1,4 @@
-from dict_db import \
+from .dict_db import \
     pronomen_ersetzungen_m, \
     pronomen_ersetzungen_w, \
     ocr_ersetzungen, \
