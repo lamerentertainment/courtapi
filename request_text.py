@@ -3,13 +3,10 @@ import json
 
 url = 'http://localhost:8000/api/v1/transform_text'
 payload = {
-    'text': """Ich bin unschuldig. Nie habe ich 
-    dieser Person je ein Haar gek- 
-    rümmt. Dies ist eine ziemlich un- 
-    rühmliche Behauptung. Viel- 
-    mehr ist Laure die schuld- 
-    ige Person  """,
-    'geschlecht': "w"
+    'text': """Ich weiss nicht, was ich sa-
+gen soll, es geht mir mies. Morgen werden wir auf den Mond ge-
+hen""",
+    'geschlecht': "m"
 }
 
 # Convert payload to JSON
