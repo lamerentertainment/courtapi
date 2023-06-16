@@ -150,9 +150,9 @@ def verben_ersetzung(textstelle):
 
 
 def als_aussage_formatieren(textstelle, geschlecht='m'):
-    textstelle = umlautkorrektur(textstelle)
     textstelle = zeilenumbrueche_entfernen(textstelle)
     textstelle = ocr_ersetzung(textstelle)
     textstelle = pronomen_ersetzung(textstelle, geschlecht)
     textstelle = verben_ersetzung(textstelle)
+    textstelle = umlautkorrektur(textstelle)
     return textstelle
