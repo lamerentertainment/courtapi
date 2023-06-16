@@ -93,9 +93,11 @@ def zeilenumbrueche_entfernen(textstelle):
     return textstelle
 
 
-def umlautkorrektur(textstelle):
-    textstelle = bytes(textstelle, "utf-8").decode("unicode_escape")
-    return textstelle
+def umlautkorrektur(string, encoding='utf-8'):
+    return (string.encode('latin1') # To bytes, required by 'unicode-escape'
+             .decode('unicode-escape') # Perform the actual octal-escaping decode
+             .encode('latin1') # 1:1 mapping back to bytes
+             .decode(encoding))
 
 
 def ocr_ersetzung(textstelle):
@@ -154,5 +156,5 @@ def als_aussage_formatieren(textstelle, geschlecht='m'):
     textstelle = ocr_ersetzung(textstelle)
     textstelle = pronomen_ersetzung(textstelle, geschlecht)
     textstelle = verben_ersetzung(textstelle)
-    # textstelle = umlautkorrektur(textstelle)
+    textstelle = umlautkorrektur(textstelle)
     return textstelle
