@@ -93,6 +93,11 @@ def zeilenumbrueche_entfernen(textstelle):
     return textstelle
 
 
+def umlautkorrektur(textstelle):
+    textstelle = bytes(textstelle, "utf-8").decode("unicode_escape")
+    return textstelle
+
+
 def ocr_ersetzung(textstelle):
     """
         Ersetzt typische Fehler, die bei der OCR Texterkennung entstehen (oft wird dass grossgeschriebene I als kleines l missinterpretiert)
@@ -145,6 +150,7 @@ def verben_ersetzung(textstelle):
 
 
 def als_aussage_formatieren(textstelle, geschlecht='m'):
+    textstelle = umlautkorrektur(textstelle)
     textstelle = zeilenumbrueche_entfernen(textstelle)
     textstelle = ocr_ersetzung(textstelle)
     textstelle = pronomen_ersetzung(textstelle, geschlecht)
